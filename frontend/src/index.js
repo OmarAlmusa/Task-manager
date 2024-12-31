@@ -214,14 +214,16 @@ fetch(API_URL)
 
 submitBtn.addEventListener("click", (event)=>{
 
-    console.log(`title: ${taskTitle.value}`);
-    console.log(`description: ${taskDesc.value}`);
-
-    console.log("submit button clicked");
-
     if(!taskTitle.value){
         console.log("title is empty!");
+        Swal.fire({
+            icon: 'warning', // Exclamation icon
+            title: 'Oops...',
+            text: 'Please fill the title!',
+        });
         return;
+
+
     }else{
         fetch(API_URL,
             {

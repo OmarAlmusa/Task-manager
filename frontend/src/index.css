@@ -32,10 +32,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem auto;
     background-color: var(--foreground-color);
     box-shadow: 0 2px 15px 5px rgba(1, 1, 1, 0.3);
+    width: 100%;
+    position: sticky;
+    top: 0;
 }
+
+
 
 .base {
     margin: 5rem auto;
