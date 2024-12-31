@@ -8,7 +8,7 @@
     <li><s>Connecting to MongoDB using pymongo</s></li>
     <li><s>Writing backend API using FastAPI python library</s></li>
     <li><s>Hosting frontend static pages using Express JS</s></li>
-    <li>Writing frontend from scratch</li>
+    <li><s>Writing frontend from scratch</s></li>
     <li>Writing tests for backend</li>
     <li>Containerizing my apps using Docker</li>
     <li>User Docker Compose to run multi-container app</li>
