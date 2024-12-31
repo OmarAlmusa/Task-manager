@@ -1,0 +1,333 @@
+/* Pastel colors link: https://colorhunt.co/palette/fef3e2bec6a0708871606676 */
+/* #FEF3E2 #BEC6A0 #708871 #606676 */
+
+
+:root {
+    --background-color: #708871;
+    --foreground-color: #BEC6A0;
+    --text-color: #f9f5f0;
+    --dark-color: #606676;
+    --red-color: #E82561;
+    --blue-color: #6499E9;
+    --beige-color: #A59D84;
+}
+
+.sour-gummy-100 {
+    font-family: "Sour Gummy", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem auto;
+    background-color: var(--foreground-color);
+    box-shadow: 0 2px 15px 5px rgba(1, 1, 1, 0.3);
+}
+
+.base {
+    margin: 5rem auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    background-color: var(--foreground-color);
+    border-radius: 25px;
+    box-shadow: 0 5px 10px 3px rgba(1, 1, 1, 0.3);
+}
+
+.input-bar {
+    display: flex;
+    flex-direction: row; /* Stack elements vertically */
+    align-items: center; /* Center align them horizontally */
+    gap: 3rem; /* Add spacing between each child */
+    
+}
+
+.texts-input {
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* Ensure labels and inputs are stacked vertically */
+    gap: 1.6rem; /* Add spacing between label and input */
+}
+
+.input-boxes {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.input-boxes > input {
+    width: 200px; /* Optional: Limit the maximum width */
+    height: 30px;
+    border: none;
+    border-radius: 5px; /* Optional: Add rounded corners */
+    border: 1px solid var(--dark-color); /* Optional: Add a border for clarity */
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.input-boxes > label {
+    font-weight: 300;
+}
+
+.input-boxes > input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.submit-btn {
+    width: 100px;
+    height: 30px;
+    border: 1px solid var(--dark-color); /* Remove default button border */
+    border-radius: 5px;
+    background-color: #4bba5e; /* Button background color */
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #6fc874; /* Darken button on hover */
+}
+
+.submit-btn:active {
+    background-color: #418144; /* Darken button on hover */
+}
+
+.tasks-list {
+    padding: 4rem 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.single-task-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--dark-color); /* Optional: Add a border for clarity */
+    border-radius: 8px;
+    background-color: var(--background-color); /* Matches your dark theme */
+    gap: 1rem;
+    width: 700px;
+    height: 50px;
+}
+
+.single-task-box > .task-text {
+    flex-grow: 1;
+    line-height: 0.5rem;
+    text-align: left;
+}
+
+.single-task-box > input[type="checkbox"]{
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.single-task-box > .edit-btn {
+    flex-shrink: 0; /* Keeps the button size consistent */
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    border: 1px solid var(--dark-color);
+    border-radius: 4px;
+    background-color: #7395cc;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.single-task-box > .edit-btn:hover {
+    background-color: #a6bee0;
+}
+
+.single-task-box > .edit-btn:active {
+    background-color: #46638b;
+}
+
+.hidden {
+    display: none;
+}
+
+.apply-blur-filter {
+    filter: blur(5px);
+}
+
+.overlay {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0px;
+    left:0px;
+    background-color: rgba(1, 1, 1, 0.5);
+}
+
+.edit-menu {
+    position: fixed;
+    width: 600px;
+    height: fit-content;
+    background-color: var(--foreground-color);
+    z-index: 2;
+    margin:auto;
+    inset: 0;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px 3px rgba(1, 1, 1, 0.3);
+    padding: 0 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.edit-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin: 0px auto;
+    padding-right: 4rem;
+    width: 80%;
+}
+
+.edit-inputs > .input-boxes {
+    display: flex;
+    align-items: center; /* Align label and input vertically */
+    gap: 1rem; /* Spacing between label and input */
+    width: 100%; /* Ensure full width for consistency */
+    
+}
+
+.edit-inputs > .input-boxes > label {
+    flex-basis: 20%; /* Reserve space for the label */
+    text-align: right; /* Align label text to the right */
+    font-weight: 500; /* Slightly bold for clarity */
+}
+
+.edit-inputs > .input-boxes > input,
+.edit-inputs > .input-boxes > textarea {
+    flex-grow: 1; /* Allow input to fill remaining space */
+    height: 30px;
+    /* padding: 0 10px; */
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+.edit-inputs > .input-boxes > textarea {
+    resize: none; /* Prevent resizing for consistency */
+    height: 60px; /* Set a consistent height for textareas */
+}
+
+.edit-inputs > .input-boxes > input[type="checkbox"] {
+    flex-grow: 0; /* Prevent the checkbox from stretching */
+    width: 20px;
+    height: 20px;
+}
+
+.edit-menu-top {
+    display: flex;
+    flex-direction: row;
+    gap:1.6rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-menu-bottom {
+    display: flex;
+    flex-direction: row;
+    gap:1.6rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.exit-btn {
+    font-size: large;
+    border-radius: 5px;
+    background-color: var(--red-color);
+    color: var(--text-color);
+    border: 1px solid var(--dark-color);
+    transition: background-color 0.3s ease;
+}
+
+.exit-btn:hover {
+    background-color: #ff437b;
+}
+
+.exit-btn:active {
+    background-color: #a01841;
+}
+
+.delete-btn {
+    border-radius: 5px;
+    background-color: var(--red-color);
+    color: var(--text-color);
+    border: 1px solid var(--dark-color);
+    transition: background-color 0.3s ease;
+    padding:0.5rem;
+}
+
+.delete-btn:hover {
+    background-color: #ff437b;
+}
+
+.delete-btn:active {
+    background-color: #a01841;
+}
+
+.apply-btn {
+    border-radius: 5px;
+    background-color: var(--blue-color);
+    color: var(--text-color);
+    border: 1px solid var(--dark-color);
+    transition: background-color 0.3s ease;
+    padding:0.5rem;
+}
+
+.apply-btn:hover {
+    background-color: #7cb0ff;
+}
+
+.apply-btn:active {
+    background-color: #365c95;
+}
+
+.cancel-btn {
+    border-radius: 5px;
+    background-color: var(--beige-color);
+    color: var(--text-color);
+    border: 1px solid var(--dark-color);
+    transition: background-color 0.3s ease;
+    padding:0.5rem;
+}
+
+.cancel-btn:hover {
+    background-color: #cbc0a1;
+}
+
+.cancel-btn:active {
+    background-color: #76705d;
+}
+
+
+

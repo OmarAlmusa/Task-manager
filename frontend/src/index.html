@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Task manager</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Task manager">
+        <meta name="keywords" content="Task manager, Tasks, frontend">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body class="sour-gummy-100">
+
+        <div class="main" id="main">
+
+            <header>
+                <h1>Task Manager</h1>
+            </header>
+    
+            <div class="base" id="base">
+    
+                <div class="input-bar" id="input-bar">
+    
+                    <div class="texts-input" id="texts-input">
+    
+                        <div class="input-boxes" id="input-boxes">
+                            <label for="task-input">Enter task name</label>
+                            <input type="text" id="task-input" name="task-input">
+                        </div>
+    
+                        <div class="input-boxes" id="input-boxes">
+                            <label for="task-desc-input">Description (optional)</label>
+                            <input type="text" id="task-desc-input" name="task-desc-input">
+                        </div>
+                        
+                    </div>
+                        
+                    <button id="submit-btn" class="submit-btn">Submit</button>
+    
+                </div>
+    
+    
+                <div class="tasks-list" id="tasks-list">
+    
+                </div>
+    
+            </div>
+            
+        </div>
+
+        <div id="overlay" class="overlay hidden">
+            <div id="edit-menu" class="edit-menu">
+                
+                <div id="edit-menu-top" class="edit-menu-top">
+                    <h3>Edit task</h3>
+                    <button id="exit-btn" class="exit-btn">X</button>
+                </div>
+                
+                <div class="edit-inputs" id="edit-inputs">
+    
+                    <div class="input-boxes" id="input-boxes">
+                        <label for="task-input">Title</label>
+                        <input type="text" id="task-input" name="task-input">
+                    </div>
+
+                    <div class="input-boxes" id="input-boxes">
+                        <label for="task-desc-input">Description</label>
+                        <input type="text" id="task-desc-input" name="task-desc-input">
+                    </div>
+
+                    <div class="input-boxes" id="input-boxes">
+                        <label for="finished-edit">Finished</label>
+                        <input type="checkbox" id="finished-edit" name="finished-edit" />
+                    </div>
+                    
+                </div>
+                
+                <div id="edit-menu-bottom" class="edit-menu-bottom">
+
+                    <div>
+                        <button id="delete-btn" class="delete-btn">Delete</button>
+                    </div>
+
+                    <div id="positive-btns" class="positive-btns">
+                        <button id="apply-btn" class="apply-btn">Apply</button>
+                        <button id="cancel-btn" class="cancel-btn">Cancel</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+    </body>
+    <script src="./index.js"></script>
+</html>
