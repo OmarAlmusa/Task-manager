@@ -1,23 +1,24 @@
 from email.policy import HTTP
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, HTTPException, status, Depends
 from ..python_mongodb import get_database
 from ..models.task_model import Task, add_task_schema, update_task_schema
 from datetime import datetime, timezone
 from bson import ObjectId
 
-db = get_database()
-
-collection = db["tasks-collection"]
 
 router = APIRouter(
     prefix="/tasks",
     tags=["tasks"]
 )
 
+def get_collection():
+    db = get_database()
+    return db["tasks-collection"]
+
 
 
 @router.post("/")
-def add_task(task: add_task_schema):
+def add_task(task: add_task_schema, collection=Depends(get_collection)):
     if not task.title.strip():
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Task title cannot be empty or contain only spaces")
     new_task = Task(
@@ -31,7 +32,7 @@ def add_task(task: add_task_schema):
 
 
 @router.get("/")
-def get_all_tasks():
+def get_all_tasks(collection=Depends(get_collection)):
     all_tasks = collection.find({})
     res = [{**task, "_id": str(task["_id"])} for task in all_tasks]
     return {"all tasks": res}
@@ -39,7 +40,7 @@ def get_all_tasks():
 
 
 @router.get("/{task_id}")
-def get_single_task(task_id: str):
+def get_single_task(task_id: str, collection=Depends(get_collection)):
     try:
         object_id = ObjectId(task_id)
     except Exception:
@@ -59,7 +60,7 @@ def get_single_task(task_id: str):
 
 
 @router.patch("/{task_id}")
-def update_task(task_id: str, task: update_task_schema):
+def update_task(task_id: str, task: update_task_schema, collection=Depends(get_collection)):
 
     try:
         object_id = ObjectId(task_id)
@@ -87,7 +88,7 @@ def update_task(task_id: str, task: update_task_schema):
 
 
 @router.delete("/{task_id}")
-def delete_task(task_id: str):
+def delete_task(task_id: str, collection=Depends(get_collection)):
 
     try:
         object_id = ObjectId(task_id)
