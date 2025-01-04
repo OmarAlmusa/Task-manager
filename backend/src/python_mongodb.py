@@ -8,8 +8,8 @@ def get_database():
 
     try:
         databases = client.list_database_names()
-        print("Connected to the MongoDB!")
-        print("Databases:", databases)
+        # print("Connected to the MongoDB!")
+        # print("Databases:", databases)
 
     except Exception as e:
         print("Failed to connect to the MongoDB", e)
