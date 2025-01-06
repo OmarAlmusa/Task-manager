@@ -6,6 +6,6 @@
     "nodemon": "^3.1.9"
   },
   "scripts": {
-    "serve": "nodemon frontend\\main.js"
+    "serve": "nodemon main.js"
   }
 }
