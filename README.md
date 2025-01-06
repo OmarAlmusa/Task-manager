@@ -10,8 +10,8 @@
     <li><s>Hosting frontend static pages using Express JS</s></li>
     <li><s>Writing frontend from scratch</s></li>
     <li><s>Writing tests for backend</s></li>
-    <li>Containerizing my apps using Docker</li>
-    <li>User Docker Compose to run multi-container app</li>
+    <li><s>Containerizing my apps using Docker</s></li>
+    <li><s>User Docker Compose to run multi-container app</s></li>
     <li>Implement CI/CD pipeline for my app</li>
     <li>Upload my newly created multi-container app to Docker Hub</li>
 </ul>
