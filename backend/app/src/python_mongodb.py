@@ -1,8 +1,9 @@
 from pymongo import MongoClient
+import os
 
 def get_database():
 
-    CONNECTION_STRING = "mongodb://localhost:27017"
+    CONNECTION_STRING = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 
     client = MongoClient(CONNECTION_STRING)
 

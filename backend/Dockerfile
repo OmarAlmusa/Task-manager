@@ -42,12 +42,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 USER appuser
 
 # Copy the source code into the container.
-COPY . .
+COPY ./app .
 
 # Expose the port that the application listens on.
 EXPOSE 8000
-
-ENV PYTHONPATH=/app/app
 
 # Run the application.
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
