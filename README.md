@@ -5,6 +5,11 @@
 <h2>How to run</h2>
 
 <h3>🔷NOTE: You need Docker installed on your device to be able to run this application.</h3>
+
+<p>Here is the link to install
+<a href="https://www.docker.com/products/docker-desktop/">Docker desktop</a>
+</p>
+
 <br>
 <p>Open the terminal inside any folder you want to install the app. Then Clone the repository into your machine</p>
 
@@ -32,16 +37,23 @@ localhost:3000
 ```
 
 <p>you will see the task manager page, add some task by providing title and description (optional) and then click on "submit" button.</p>
+<br>
 
-<h3>🔷NOTE: if you face issues on the front page, (eg. tasks not appearing, or backendAPI returning empty tasks) then simply refresh the page. The issue can happen if you load into the "localhost:3000" quickly right after starting the app. Some seconds needed for the database to load.</h3>
-
-<p>to stop the app, run the following command in terminal</p>
+<p>To stop the app, in the same directory, run the following command in terminal</p>
 
 ```
 docker compose stop
 ```
 
-<hr>
+<p>To start the app again, in the same directory, run the following command in terminal</p>
+
+```
+docker compose start
+```
+
+<h3>🔷NOTE: if you face issues on the front page, (eg. tasks not appearing, or backendAPI returning empty tasks) then simply refresh the page. The issue can happen if you load into the "localhost:3000" quickly right after starting the app. Some seconds needed for the database to load.</h3>
+
+<br>
 
 <h2>Motivation</h2>
 
