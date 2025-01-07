@@ -187,7 +187,7 @@ async function initApp() {
     
     }
     
-    fetch(API_URL)
+    await fetch(API_URL)
     .then(response=>response.json())
     .then(data => data["all tasks"].forEach(element => {
     

@@ -1,12 +1,5 @@
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Docker Compose reference guide at
-# https://docs.docker.com/go/compose-spec-reference/
+name: task-manager
 
-# Here the instructions define your application as a service called "app".
-# This service is built from the Dockerfile in the current directory.
-# You can add other services your application may depend on here, such as a
-# database or a cache. For examples, see the Awesome Compose repository:
-# https://github.com/docker/awesome-compose
 services:
 
   mongodb:
@@ -14,6 +7,10 @@ services:
     container_name: mongodb
     ports:
       - "27017:27017"
+
+    volumes:
+      - db_data:/data/db
+      - db_data_config:/data/configdb
 
   backend:
     build: ./backend
@@ -35,3 +32,7 @@ services:
       - BACKEND_URL=http://task_manager_backend:8000
     depends_on:
       - backend
+
+volumes:
+  db_data:
+  db_data_config:
