@@ -13,6 +13,7 @@ services:
       - db_data_config:/data/configdb
 
   backend:
+    image: "omar8832/task-manager-backend:latest"
     build: ./backend
     container_name: task_manager_backend
     environment:
@@ -24,6 +25,7 @@ services:
       - mongodb
 
   frontend:
+    image: "omar8832/task-manager-frontend:latest"
     build: ./frontend
     container_name: task_manager_frontend
     ports:
