@@ -13,8 +13,8 @@ services:
       - db_data_config:/data/configdb
 
   backend:
-    image: "omar8832/task-manager-backend:latest"
     build: ./backend
+    image: "omar8832/task-manager-backend:latest"
     container_name: task_manager_backend
     environment:
       - MONGO_URI=mongodb://mongodb:27017
@@ -25,8 +25,8 @@ services:
       - mongodb
 
   frontend:
-    image: "omar8832/task-manager-frontend:latest"
     build: ./frontend
+    image: "omar8832/task-manager-frontend:latest"
     container_name: task_manager_frontend
     ports:
       - "3000:3000"
